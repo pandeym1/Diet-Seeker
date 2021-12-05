@@ -1,31 +1,29 @@
 #pragma once
 #include<string>
 #include<map>
+#include<unordered_map>
 #include<vector>
+#include<iostream>
 using namespace std;
 
 struct node {
+    int ID;
     string name;
+    //add macros as needed
 };
 
 class Graph
 {
 private:
-    map<node, vector<pair<node, int>>> adjList;
+    unordered_map<int, node> nodeStore;
+    unordered_map<int, vector<int>> adjList;
     // Graph ADJACENCY LIST data structure here 
 public:
     void insertEdge(node from, node to, int weight);
+    void printGraph();
     //bool isEdge(node from, node to);
     //int getWeight(node from, node to);
 };
-
-void Graph::insertEdge(node from, node to, int weight)
-{
-    pair<node, int> endMe;
-    endMe.first = to;
-    endMe.second = weight;
-    adjList[from].push_back(endMe);
-}
 
 //bool Graph::isEdge(node from, node to)
 //{
