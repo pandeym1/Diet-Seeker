@@ -5,9 +5,11 @@ using namespace std;
 
 int main() {
 	Graph myGraph;
-	User myUser;
+	User myUser(19, 1, 159.8, 73);
 
-	cout << "BMR = " << myUser.calculateBMR(19, 159.8, 6.083) << endl;
+	cout << "Max Carbs: " << myUser.giveMaxCarb() << endl;
+	cout << "Max Protiens: " << myUser.giveMaxProt() << endl;
+	cout << "Max Fat: " << myUser.giveMaxFat() << endl;
 
 	node temp;
 	temp.name = "Wroks";
