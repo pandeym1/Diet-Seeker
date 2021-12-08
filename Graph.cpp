@@ -11,9 +11,9 @@ void Graph::insertEdge(node from, node to, int weight) {
 
 void Graph::printGraph() {
 	for (auto it: adjList) {
-		cout << it.first << " connects to: ";
+		cout << it.first << " Name: " << nodeStore[it.first].name <<" connects to: ";
 		for (int i = 0; i < it.second.size(); i++) {
-			cout << it.second.at(i).first << " ";
+			cout << it.second.at(i).first << " Name: " << nodeStore[it.second.at(i).first].name << " ";
 			cout << "with a weight of: " << it.second.at(i).second;
 		}
 		cout << endl;
