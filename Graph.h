@@ -9,9 +9,10 @@ using namespace std;
 struct node {
     int ID;
     string name;
-    int protien;
-    int carb;
-    int fat;
+    float protien;
+    float carb;
+    float fat;
+    float servingSize;
     //add macros as needed
 };
 
