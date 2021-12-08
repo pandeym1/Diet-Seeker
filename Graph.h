@@ -19,7 +19,7 @@ class Graph
 {
 private:
     unordered_map<int, node> nodeStore;
-    unordered_map<int, vector<int>> adjList;
+    unordered_map<int, vector<pair<int, int>>> adjList;
     // Graph ADJACENCY LIST data structure here 
 public:
     void insertEdge(node from, node to, int weight);

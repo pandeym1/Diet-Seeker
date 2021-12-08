@@ -19,7 +19,7 @@ int main() {
 	temp2.name = "Temp2";
 	temp2.ID = 4321;
 
-	myGraph.insertEdge(temp, temp2, 0);
+	myGraph.insertEdge(temp, temp2, 100);
 	myGraph.printGraph();
 
 	cout << "Hello World" << endl;
