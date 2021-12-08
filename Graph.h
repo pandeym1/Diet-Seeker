@@ -4,6 +4,7 @@
 #include<unordered_map>
 #include<vector>
 #include<iostream>
+#include<queue>
 using namespace std;
 
 struct node {
@@ -23,6 +24,7 @@ private:
     unordered_map<int, vector<pair<int, int>>> adjList;
     // Graph ADJACENCY LIST data structure here 
 public:
+    int srcNode;
     void insertEdge(node from, node to, int weight);
     void printGraph();
     vector<int> BFSsearch(string Uinput);
