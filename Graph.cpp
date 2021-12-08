@@ -19,3 +19,7 @@ void Graph::printGraph() {
 		cout << endl;
 	}
 }
+
+vector<int> Graph::BFSsearch(string Uinput) {
+	
+}
