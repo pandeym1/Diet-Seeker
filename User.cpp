@@ -5,16 +5,16 @@ float User::calculateBMR(int AGE, int actLev, float WEIGHT, float HEIGHT) {
 	switch (actLev)
 	{
 	case 0: //low activity
-		BMR *= 1.2;
+		BMR *= 1.2f;
 		break;
 	case 1: //1-3 times per week
-		BMR *= 1.375;
+		BMR *= 1.375f;
 		break;
 	case 2: //3-5 times per week
-		BMR *= 1.55;
+		BMR *= 1.55f;
 		break;
 	case 3: //6-7 times per week
-		BMR *= 1.725;
+		BMR *= 1.725f;
 		break;
 	}
 	return BMR;
@@ -30,6 +30,18 @@ float User::giveMaxProt() {
 
 float User::giveMaxFat() {
 	return this->maxFat;
+}
+
+float User::giveCurCarb() {
+	return this->currCarb;
+}
+
+float User::giveCurProt() {
+	return this->currProt;
+}
+
+float User::giveCurFat() {
+	return this->currFat;
 }
 
 void User::addFood(int ID, string name, float protien, float fat, float carb) {

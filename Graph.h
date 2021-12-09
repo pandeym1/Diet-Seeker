@@ -5,6 +5,7 @@
 #include<vector>
 #include<iostream>
 #include<queue>
+#include <stack>
 using namespace std;
 
 struct node {
@@ -27,6 +28,11 @@ public:
     int srcNode;
     void insertEdge(node from, node to, int weight);
     void printGraph();
+    void printInfo(int ID);
+    float getFoodCarb(int ID);
+    float getFoodProt(int ID);
+    float getFoodFat(int ID);
+    string getFoodName(int ID);
     vector<int> BFSsearch(string Uinput);
     vector<int> DFSrec(int ID, int ID2);
     vector<int> DijkstraRec(int ID, int ID2);

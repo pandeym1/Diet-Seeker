@@ -1,24 +1,34 @@
 #pragma once
-#include "Graph.h"
+//#include "Graph.h"
 #include<vector>
+#include<string>
+using namespace std;
 
-struct node {
-	string name;
-	int ID;
-	float protien;
-	float fat;
-	float carb;
-};
+//struct node {
+//	string name;
+//	int ID;
+//	float protien;
+//	float fat;
+//	float carb;
+//};
 
 class User
 { //need to add activity level to calculation
 private:
+	struct node {
+		string name;
+		int ID;
+		float protien;
+		float fat;
+		float carb;
+	};
+
 	float maxCarbs;
 	float maxProt;
 	float maxFat;
-	float currCarb;
-	float currProt;
-	float currFat;
+	float currCarb = 0;
+	float currProt = 0;
+	float currFat = 0;
 	int age;
 	int activityLevel;
 
@@ -34,6 +44,9 @@ public:
 	float giveMaxCarb();
 	float giveMaxProt();
 	float giveMaxFat();
+	float giveCurCarb();
+	float giveCurProt();
+	float giveCurFat();
 	User(int AGE, int actLev, float WEIGHT, float HEIGHT) {
 		this->age = AGE;
 		this->activityLevel = actLev;

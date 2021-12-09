@@ -1,6 +1,4 @@
 #include "Graph.h"
-#include <queue>
-#include <stack>
 
 void Graph::insertEdge(node from, node to, int weight) {
 	nodeStore[from.ID] = from;
@@ -20,6 +18,29 @@ void Graph::printGraph() {
 		}
 		cout << endl;
 	}
+}
+
+void Graph::printInfo(int ID) {
+	cout << "Name: " << nodeStore[ID].name << endl;
+	cout << "Carbohydrates: " << nodeStore[ID].carb << endl;
+	cout << "Protein: " << nodeStore[ID].protien << endl;
+	cout << "Fat: " << nodeStore[ID].fat << endl;
+}
+
+float Graph::getFoodProt(int ID) {
+	return nodeStore[ID].protien;
+}
+
+float Graph::getFoodCarb(int ID) {
+	return nodeStore[ID].carb;
+}
+
+float Graph::getFoodFat(int ID) {
+	return nodeStore[ID].fat;
+}
+
+string Graph::getFoodName(int ID) {
+	return nodeStore[ID].name;
 }
 
 vector<int> Graph::BFSsearch(string Uinput) {
@@ -68,6 +89,9 @@ vector<int> Graph::DFSrec(int ID, int ID2) {
 		nodeS.pop();
 
 		for (int i = 0; i < adjList[temp].size(); i++) {
+			if (recRes.size() >= 5) { //only so the program does not kill itself
+				return recRes;
+			}
 			if (adjList[temp].at(i).first == ID2) {
 				return recRes;
 			}
@@ -114,6 +138,9 @@ vector<int> Graph::DijkstraRec(int ID, int ID2) {
 		}
 		nodeS.push(maxID);
 		recRes.push_back(maxID);
+		if (recRes.size() >= 5) {
+			return recRes;
+		}
 	}
 	return recRes;
 }
