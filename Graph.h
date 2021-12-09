@@ -28,6 +28,8 @@ public:
     void insertEdge(node from, node to, int weight);
     void printGraph();
     vector<int> BFSsearch(string Uinput);
+    vector<int> DFSrec(int ID, int ID2);
+    vector<int> DijkstraRec(int ID, int ID2);
     //bool isEdge(node from, node to);
     //int getWeight(node from, node to);
 };

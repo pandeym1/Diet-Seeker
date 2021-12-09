@@ -31,3 +31,29 @@ float User::giveMaxProt() {
 float User::giveMaxFat() {
 	return this->maxFat;
 }
+
+void User::addFood(int ID, string name, float protien, float fat, float carb) {
+	node temp;
+	temp.ID = ID;
+	temp.name = name;
+	temp.protien = protien;
+	temp.fat = fat;
+	temp.carb = carb;
+
+	this->currProt += protien;
+	this->currFat += fat;
+	this->currCarb += carb;
+
+	userStore.push_back(temp);
+}
+
+void User::removeFood(int ID) {
+	for (int i = 0; i < userStore.size(); i++) {
+		if (userStore.at(i).ID == ID) {
+			this->currProt -= userStore.at(i).protien;
+			this->currFat -= userStore.at(i).fat;
+			this->currCarb -= userStore.at(i).carb;
+			userStore.erase(userStore.begin() + i);
+		}
+	}
+}

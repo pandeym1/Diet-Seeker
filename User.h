@@ -1,4 +1,15 @@
 #pragma once
+#include "Graph.h"
+#include<vector>
+
+struct node {
+	string name;
+	int ID;
+	float protien;
+	float fat;
+	float carb;
+};
+
 class User
 { //need to add activity level to calculation
 private:
@@ -14,7 +25,11 @@ private:
 	float weight;
 	float height;
 	float BMR;
+
 public:
+	vector<node> userStore;
+	void addFood(int ID, string name, float protien, float fat, float carb);
+	void removeFood(int ID);
 	float calculateBMR(int AGE, int actLev, float WEIGHT, float HEIGHT);
 	float giveMaxCarb();
 	float giveMaxProt();
@@ -34,4 +49,3 @@ public:
 		this->maxFat = (this->BMR) * 0.2f;
 	}
 };
-

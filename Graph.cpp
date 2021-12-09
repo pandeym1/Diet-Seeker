@@ -54,3 +54,13 @@ vector<int> Graph::BFSsearch(string Uinput) {
 
 	return searchRes;
 }
+
+vector<int> Graph::DFSrec(int ID, int ID2) {
+	vector<int> recRes;
+	return recRes;
+}
+
+vector<int> Graph::DijkstraRec(int ID, int ID2) {
+	vector<int> recRes;
+	return recRes;
+}
