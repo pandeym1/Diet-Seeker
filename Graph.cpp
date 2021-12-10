@@ -50,7 +50,7 @@ vector<int> Graph::BFSsearch(string Uinput) {
 	unordered_map<int, bool> UMV;
 
 	UMV[srcNode] = true;
-	if (nodeStore[srcNode].name.find(Uinput)) {
+	if (nodeStore[srcNode].name.find(Uinput) != std::string::npos) {
 		searchRes.push_back(srcNode);
 	}
 	queue<int> nodeQ;
@@ -61,10 +61,10 @@ vector<int> Graph::BFSsearch(string Uinput) {
 		nodeQ.pop();
 
 		for (int i = 0; i < adjList[temp].size(); i++) {
-			if (UMV.find(adjList[temp].at(i).first) != UMV.end()) {
+			if (UMV.find(adjList[temp].at(i).first) == UMV.end()) {
 				UMV[adjList[temp].at(i).first] = true;
 				nodeQ.push(adjList[temp].at(i).first);
-				if (nodeStore[adjList[temp].at(i).first].name.find(Uinput)) {
+				if (nodeStore[adjList[temp].at(i).first].name.find(Uinput) != std::string::npos) {
 					searchRes.push_back(adjList[temp].at(i).first);
 				}
 				if (searchRes.size() >= 10) {
@@ -95,7 +95,7 @@ vector<int> Graph::DFSrec(int ID, int ID2) {
 			if (adjList[temp].at(i).first == ID2) {
 				return recRes;
 			}
-			if (UMV.find(adjList[temp].at(i).first) != UMV.end()) {
+			if (UMV.find(adjList[temp].at(i).first) == UMV.end()) {
 				UMV[adjList[temp].at(i).first] = true;
 				nodeS.push(adjList[temp].at(i).first);
 				recRes.push_back(adjList[temp].at(i).first);
@@ -119,7 +119,7 @@ vector<int> Graph::DijkstraRec(int ID, int ID2) {
 		int maxID = 0;
 
 		for (int i = 0; i < adjList[temp].size(); i++) {
-			if (adjList[temp].at(i).second > max && UMV.find(adjList[temp].at(i).first) != UMV.end()) {
+			if (adjList[temp].at(i).second > max && UMV.find(adjList[temp].at(i).first) == UMV.end()) {
 				max = adjList[temp].at(i).second;
 				maxID = adjList[temp].at(i).first;
 			}

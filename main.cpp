@@ -16,6 +16,39 @@ int main() {
 	bool runtime = true;
 	string foodName;
 
+	node temp;
+	temp.ID = 1234;
+	temp.name = "Bread";
+	temp.carb = 10;
+	temp.fat = 10;
+	temp.protien = 10;
+
+	node temp2;
+	temp2.ID = 2214;
+	temp2.name = "Milk";
+	temp2.carb = 20;
+	temp2.fat = 20;
+	temp2.protien = 20;
+
+	node temp3;
+	temp3.ID = 2213;
+	temp3.name = "Pasta";
+	temp3.carb = 30;
+	temp3.fat = 30;
+	temp3.protien = 30;
+
+	node temp4;
+	temp4.ID = 2211;
+	temp4.name = "Cheese";
+	temp4.carb = 200;
+	temp4.fat = 200;
+	temp4.protien = 200;
+
+	myGraph.insertEdge(temp, temp2, 10);
+	myGraph.insertEdge(temp2, temp3, 10);
+	cout << "Test " << "\n" << endl;
+	myGraph.srcNode = 1234;
+
 	cout << "Enter your age (years): ";
 	cin >> age;
 	cout << "What is you activity level?" << endl;

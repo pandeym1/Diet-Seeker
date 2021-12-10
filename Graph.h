@@ -14,7 +14,7 @@ struct node {
     float protien;
     float carb;
     float fat;
-    float servingSize;
+    //float servingSize;
     //add macros as needed
 };
 
